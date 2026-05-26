@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: gstbillingwithinvoicemngmt
+
+  # GMail Properties
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sathejyoti376@gmail.com
+    password: vhdf cgrf drkq jszq
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  #MultiPart files Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 3KB
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/GST_Project_DB?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Kolkata
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+
+jwt:
+  secret: mysecretkeyforjwtauthenticationforgstbillingwithinvoicemngmtis17150301
+  expiration: 86400000
+
+logging:
+  level:
+    root: INFO
+    com.fullstack: DEBUG
